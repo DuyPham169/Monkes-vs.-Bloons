@@ -10,14 +10,4 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 3)
-        {
-            GameObject bloon = collision.gameObject;
-            Destroy(bloon);
-            Destroy(gameObject);
-        }
-    }
 }
