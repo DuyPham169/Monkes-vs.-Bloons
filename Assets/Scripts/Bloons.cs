@@ -7,8 +7,13 @@ public class Bloons : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private int health;
 
+    private float xDeadZone = -16f;
+
     private void Update()
     {
+        if (transform.position.x < xDeadZone)
+            Destroy(gameObject);
+
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
     }
 

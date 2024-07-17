@@ -134,4 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  health: 1
+  health: 3

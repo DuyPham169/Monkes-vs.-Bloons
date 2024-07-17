@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject redBloon;
     [SerializeField] private float spawnRate;
+    [SerializeField] private int laneRange;
 
     private float lastSpawnTime = 0f;
 
@@ -25,6 +26,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void spawnBloon()
     {
-        Instantiate(redBloon, transform.position, Quaternion.identity);
+        int lanePos = Random.Range(-2, 3) * laneRange;
+        Vector2 spawnPos = new Vector2(transform.position.x, transform.position.y + lanePos);
+
+        Instantiate(redBloon, spawnPos, Quaternion.identity);
     }
 }
